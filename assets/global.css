@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "TT Norms Pro";
+  font-weight: bold;
+  src: url("./fonts/TT Norms Pro Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TT Norms Pro";
+  font-weight: normal;
+  src: url("./fonts/TT Norms Pro Regular.woff") format("woff");
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 20px;
+  font-family: 'TT Norms Pro';
+  min-height: 1000px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: #534ca1;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.external:after {
+  font-family: 'icomoon';
+  content: "\ea7d";
+  margin-left: 6px;
+  margin-bottom: -3px;
+  font-size: 12px;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+}

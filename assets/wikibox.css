@@ -1,0 +1,140 @@
+:root {
+  --wikibox-border: #e5e5e5;
+  --wikibox-picture-top: -50px;
+  --anim-duration: 400ms;
+}
+
+.wikibox {
+  max-width: 450px;
+  width: 100%;
+  border: 1px solid var(--wikibox-border);
+  margin-top: calc(var(--wikibox-picture-top) * -1);
+  margin-bottom: 20px;
+  color: #737377;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+.wikibox-hero {
+  text-align: center;
+  padding: 20px;
+}
+
+.wikibox-picture {
+  width: 200px;
+  border-radius: 5px;
+  margin-top: var(--wikibox-picture-top);
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.wikibox-title {
+  color: #282A40;
+  margin-bottom: 6px;
+  font-size: 24px;
+}
+
+.wikibox-subtitle {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.wikibox-links {
+  padding: 20px;
+  border-top: 1px solid var(--wikibox-border);
+  border-bottom: 1px solid var(--wikibox-border);
+  text-align: center;
+}
+
+.wikibox-links:empty {
+  visibility: hidden;
+  padding: 0;
+  margin-top: -20px;
+}
+
+.wikibox-social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.wikibox-social a {
+  margin: 0 8px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.wikibox-summary {
+  text-align: left;
+  line-height: 1.4;
+  padding: 20px;
+  border-bottom: 1px solid var(--wikibox-border);
+}
+
+.wikibox-definitions {
+  margin: 0;
+  padding: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  border-bottom: 1px solid var(--wikibox-border);
+}
+
+.wikibox-definitions dt {
+  float: left;
+  clear: left;
+  margin-right: 5px;
+  font-weight: bold;
+  color: #666;
+}
+
+.wikibox-definitions dd {
+  margin-left: 0px;
+  margin-bottom: 12px;
+}
+
+.wikibox-footer {
+  display: flex;
+  flex-direction: column;
+  background: #EFF0FC;
+  padding: 12px;
+  text-align: center;
+  position: relative;
+  border-radius: 0 0 12px 12px;
+}
+
+.wikibox-footer a {
+  color: #2f317c;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+/* ---- animations */
+
+.wikibox {
+  background: #fff;
+  position: absolute;
+  display: none;
+  animation: fadein ease-out var(--anim-duration) backwards;
+  transform: none;
+  transition: 
+    opacity ease-in calc(var(--anim-duration) / 2),
+    transform ease-out var(--anim-duration)
+  ;
+  transform: translateX(0px) perspective(800px)  rotateY(0deg);
+}
+
+@keyframes fadein {
+  0% {
+    transform: translateX(50px) perspective(800px)  rotateY(20deg);
+    opacity: 0;
+  }
+}
+
+.wikibox.fadeout {
+  transform: translateX(-50px) perspective(800px)  rotateY(-20deg);
+  opacity: 0;
+  animation: none;
+}
